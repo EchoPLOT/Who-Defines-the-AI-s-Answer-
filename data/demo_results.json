@@ -1,0 +1,99 @@
+{
+  "project": "GEO-Risk Demo",
+  "paper_title": "Who Defines the AI's Answer? Assessing the Vulnerability of LLMs to Malicious Generative Engine Optimization",
+  "experiment": {
+    "samples": 1152,
+    "models": 8,
+    "model_families": 6,
+    "top_k": 5,
+    "visibility_threshold": 0.5,
+    "methods": [
+      {
+        "condition": "Baseline",
+        "target_success": 11.81,
+        "boundary_adjusted_success": 2.08
+      },
+      {
+        "condition": "LLM guidance",
+        "target_success": 80.90,
+        "boundary_adjusted_success": 76.39
+      },
+      {
+        "condition": "Indirect prompt injection",
+        "target_success": 81.60,
+        "boundary_adjusted_success": 73.26
+      },
+      {
+        "condition": "Hidden stealth content",
+        "target_success": 74.31,
+        "boundary_adjusted_success": 69.79
+      }
+    ],
+    "models_detail": [
+      {
+        "model": "gpt-5.4",
+        "family": "GPT",
+        "target_success": 88.89,
+        "boundary_adjusted_success": 87.96
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "GPT",
+        "target_success": 88.89,
+        "boundary_adjusted_success": 84.26
+      },
+      {
+        "model": "claude-opus-4-7",
+        "family": "Claude",
+        "target_success": 45.37,
+        "boundary_adjusted_success": 34.26
+      },
+      {
+        "model": "claude-opus-4-8",
+        "family": "Claude",
+        "target_success": 54.63,
+        "boundary_adjusted_success": 40.74
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "DeepSeek",
+        "target_success": 84.26,
+        "boundary_adjusted_success": 73.15
+      },
+      {
+        "model": "grok-4.2-fast",
+        "family": "Grok",
+        "target_success": 87.04,
+        "boundary_adjusted_success": 84.26
+      },
+      {
+        "model": "kimi-k2.5",
+        "family": "Kimi/Moonshot",
+        "target_success": 91.67,
+        "boundary_adjusted_success": 89.81
+      },
+      {
+        "model": "qwen3.7-max",
+        "family": "Qwen",
+        "target_success": 90.74,
+        "boundary_adjusted_success": 90.74
+      }
+    ]
+  },
+  "demo_cases": [
+    {
+      "name": "Controlled recommendation case",
+      "domain": "Travel booking recommendation",
+      "baseline_summary": "The baseline response compares multiple mainstream travel booking platforms and presents the target as one option among several alternatives.",
+      "post_intervention_summary": "The post-intervention response gives stronger recommendation priority to the target platform and provides more favorable framing.",
+      "figure": "assets/figures/controlled_case_comparison_ctrip_en.png"
+    },
+    {
+      "name": "Supplementary webpage observation",
+      "domain": "Fictitious product visibility",
+      "baseline_summary": "The fictitious products did not have prior real-world market existence.",
+      "post_intervention_summary": "After public GEO-style exposure, some observed model replies incorporated fictitious products into product-style summaries or comparison-oriented responses.",
+      "figure": "assets/figures/realworld_chat_collage_v3_en.png"
+    }
+  ]
+}

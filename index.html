@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GEO-Risk Demo</title>
+    <meta
+      name="description"
+      content="An anonymous project page and demo package for evaluating malicious Generative Engine Optimization in LLM-powered recommendation."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top">GEO-Risk</a>
+        <div class="nav-links">
+          <a href="#abstract">Abstract</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#demo">Demo</a>
+          <a href="#resources">Resources</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Anonymous Paper Demo</p>
+          <h1>Who Defines the AI's Answer?</h1>
+          <p class="subtitle">
+            Assessing the Vulnerability of LLMs to Malicious Generative Engine
+            Optimization
+          </p>
+          <p class="venue">Project page for anonymous review</p>
+          <div class="actions">
+            <a class="button primary" href="assets/paper.pdf">Paper PDF</a>
+            <a class="button" href="#demo">View Demo Cases</a>
+            <a class="button" href="#resources">Download Materials</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="abstract" class="section two-col">
+        <div class="section-heading">
+          <p class="eyebrow">Abstract</p>
+          <h2>Malicious GEO as a Recommendation Risk</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Generative Engine Optimization (GEO) has become an emerging
+            mechanism for shaping information visibility in LLM-powered search
+            and recommendation systems. This demo presents a risk-assessment
+            framework for measuring whether externally constructed information
+            can increase a target entity's mention, ranking priority, semantic
+            association, and recommendation inclination.
+          </p>
+          <p>
+            The page includes anonymized demo materials from controlled API
+            experiments and supplementary webpage observations. Full code,
+            additional samples, and release materials can be added after review.
+          </p>
+        </div>
+      </section>
+
+      <section class="metrics-band" aria-label="Key experimental settings">
+        <div class="metric">
+          <span>1,152</span>
+          <p>real API samples</p>
+        </div>
+        <div class="metric">
+          <span>8</span>
+          <p>evaluated models</p>
+        </div>
+        <div class="metric">
+          <span>3</span>
+          <p>GEO interventions</p>
+        </div>
+        <div class="metric">
+          <span>K=5</span>
+          <p>top-K visibility</p>
+        </div>
+      </section>
+
+      <section id="method" class="section alt">
+        <div class="section-heading">
+          <p class="eyebrow">Method</p>
+          <h2>Comparative Output Deviation Analysis</h2>
+          <p>
+            The framework compares baseline outputs with post-intervention
+            outputs for the same target entity, then measures changes in
+            visibility and recommendation advantage.
+          </p>
+        </div>
+        <figure class="figure-panel">
+          <img
+            src="assets/figures/workflow_geo.png"
+            alt="Workflow of data collection and evaluation for malicious GEO assessment"
+          />
+        </figure>
+      </section>
+
+      <section id="results" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Results</p>
+          <h2>Controlled Experiment Summary</h2>
+        </div>
+        <div class="result-layout">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th>Target success</th>
+                  <th>Boundary-adjusted success</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Baseline</td>
+                  <td>11.81%</td>
+                  <td>2.08%</td>
+                </tr>
+                <tr>
+                  <td>LLM guidance</td>
+                  <td>80.90%</td>
+                  <td>76.39%</td>
+                </tr>
+                <tr>
+                  <td>Indirect prompt injection</td>
+                  <td>81.60%</td>
+                  <td>73.26%</td>
+                </tr>
+                <tr>
+                  <td>Hidden stealth content</td>
+                  <td>74.31%</td>
+                  <td>69.79%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-panel compact">
+            <img
+              src="assets/figures/model_method_success_bar.png"
+              alt="Target success rates across evaluated models and intervention methods"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section id="demo" class="section alt">
+        <div class="section-heading">
+          <p class="eyebrow">Demo Cases</p>
+          <h2>Before-and-After Output Examples</h2>
+          <p>
+            The following anonymized examples illustrate how target visibility
+            changes between baseline and post-intervention responses.
+          </p>
+        </div>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <h3>Controlled Recommendation Case</h3>
+            <p>
+              A paired response example showing baseline output and
+              post-intervention output under the same recommendation task.
+            </p>
+            <img
+              src="assets/figures/controlled_case_comparison_ctrip_en.png"
+              alt="Controlled case comparison between baseline and post-intervention responses"
+            />
+          </article>
+          <article class="demo-card">
+            <h3>Supplementary Webpage Observation</h3>
+            <p>
+              A webpage-observation example showing fictitious entities being
+              incorporated into product-style model replies.
+            </p>
+            <img
+              src="assets/figures/realworld_chat_collage_v3_en.png"
+              alt="Supplementary real-world webpage observation examples"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Evaluation</p>
+          <h2>Model-Level Results</h2>
+        </div>
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Family</th>
+                <th>Target success</th>
+                <th>Boundary-adjusted success</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>gpt-5.4</td>
+                <td>GPT</td>
+                <td>88.89%</td>
+                <td>87.96%</td>
+              </tr>
+              <tr>
+                <td>gpt-5.5</td>
+                <td>GPT</td>
+                <td>88.89%</td>
+                <td>84.26%</td>
+              </tr>
+              <tr>
+                <td>claude-opus-4-7</td>
+                <td>Claude</td>
+                <td>45.37%</td>
+                <td>34.26%</td>
+              </tr>
+              <tr>
+                <td>claude-opus-4-8</td>
+                <td>Claude</td>
+                <td>54.63%</td>
+                <td>40.74%</td>
+              </tr>
+              <tr>
+                <td>deepseek-v4-pro</td>
+                <td>DeepSeek</td>
+                <td>84.26%</td>
+                <td>73.15%</td>
+              </tr>
+              <tr>
+                <td>grok-4.2-fast</td>
+                <td>Grok</td>
+                <td>87.04%</td>
+                <td>84.26%</td>
+              </tr>
+              <tr>
+                <td>kimi-k2.5</td>
+                <td>Kimi/Moonshot</td>
+                <td>91.67%</td>
+                <td>89.81%</td>
+              </tr>
+              <tr>
+                <td>qwen3.7-max</td>
+                <td>Qwen</td>
+                <td>90.74%</td>
+                <td>90.74%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="resources" class="section alt">
+        <div class="section-heading">
+          <p class="eyebrow">Resources</p>
+          <h2>Included Materials</h2>
+        </div>
+        <div class="resource-list">
+          <a href="assets/paper.pdf">Paper PDF</a>
+          <a href="assets/figures/workflow_geo.png">Framework Figure</a>
+          <a href="assets/figures/model_method_success_bar.png">Result Chart</a>
+          <a href="data/demo_results.json">Demo Data JSON</a>
+        </div>
+        <p class="note">
+          This package is prepared for anonymous review. Remove or replace the
+          placeholder PDF if the submitted manuscript must not include local
+          compilation artifacts.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Anonymous project page for malicious GEO risk assessment.</p>
+    </footer>
+  </body>
+</html>

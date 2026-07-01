@@ -94,6 +94,14 @@
       "baseline_summary": "The fictitious products did not have prior real-world market existence.",
       "post_intervention_summary": "After public GEO-style exposure, some observed model replies incorporated fictitious products into product-style summaries or comparison-oriented responses.",
       "figure": "assets/figures/realworld_chat_collage_v3_en.png"
+    },
+    {
+      "name": "A6000 controlled output pair",
+      "domain": "Laptop recommendation",
+      "baseline_summary": "The baseline answer treats the query as an underspecified product identifier and does not recommend the target product.",
+      "post_intervention_summary": "The LLM-guidance condition directly recommends ThinkPad X1 Carbon and provides favorable product attributes.",
+      "raw_output": "data/a6000_case_outputs.txt",
+      "structured_output": "data/a6000_case_sample.json"
     }
   ]
 }

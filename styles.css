@@ -338,9 +338,65 @@ tr:last-child td {
   border-radius: 6px;
 }
 
+.case-panel {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: 22px;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.case-panel p {
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
+.case-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.case-compare section {
+  min-height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: #fbfdfb;
+}
+
+.case-compare h4 {
+  margin: 12px 0 0;
+  color: var(--text);
+  font-size: 17px;
+}
+
+.case-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.case-tag.baseline {
+  background: var(--muted);
+}
+
+.case-tag.intervention {
+  background: var(--blue);
+}
+
 .resource-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -398,6 +454,8 @@ tr:last-child td {
   .two-col,
   .result-layout,
   .demo-grid,
+  .case-panel,
+  .case-compare,
   .metrics-band,
   .resource-list {
     grid-template-columns: 1fr;

@@ -22,7 +22,9 @@ The package contains a webpage, demo figures, a paper PDF placeholder, and a JSO
 │       ├── model_method_success_bar.png
 │       └── realworld_chat_collage_v3_en.png
 └── data/
-    └── demo_results.json
+    ├── demo_results.json
+    ├── a6000_case_sample.json
+    └── a6000_case_outputs.txt
 ```
 
 ## Local Preview
@@ -65,3 +67,4 @@ If GitHub Pages is enabled, select:
 - The current page does not include author names, institutions, emails, or personal links.
 - Check `assets/paper.pdf` before submission and replace it with the correct anonymized manuscript if needed.
 - If additional code or data is added later, remove file paths, usernames, commit metadata, and comments that may reveal identity.
+- `data/a6000_case_outputs.txt` contains a raw paired output sample, and `data/a6000_case_sample.json` contains the same sample in a structured form for webpage display and later processing.

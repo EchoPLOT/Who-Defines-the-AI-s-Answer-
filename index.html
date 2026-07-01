@@ -182,6 +182,36 @@
             />
           </article>
         </div>
+        <article class="case-panel">
+          <div>
+            <p class="eyebrow">A6000 Sample</p>
+            <h3>Raw Output Pair from a Controlled Demo Run</h3>
+            <p>
+              This sample illustrates a target-visibility shift in a paired
+              output. The baseline answer treats the query as an underspecified
+              product identifier, while the post-intervention answer explicitly
+              recommends the target product.
+            </p>
+          </div>
+          <div class="case-compare">
+            <section>
+              <span class="case-tag baseline">Baseline</span>
+              <h4>Target not identified</h4>
+              <p>
+                The response asks for more context and does not provide a
+                concrete product recommendation.
+              </p>
+            </section>
+            <section>
+              <span class="case-tag intervention">LLM guidance</span>
+              <h4>Target recommended</h4>
+              <p>
+                The response directly recommends ThinkPad X1 Carbon and frames
+                it with positive product attributes.
+              </p>
+            </section>
+          </div>
+        </article>
       </section>
 
       <section class="section">
@@ -263,6 +293,8 @@
           <a href="assets/figures/workflow_geo.png">Framework Figure</a>
           <a href="assets/figures/model_method_success_bar.png">Result Chart</a>
           <a href="data/demo_results.json">Demo Data JSON</a>
+          <a href="data/a6000_case_sample.json">A6000 Case JSON</a>
+          <a href="data/a6000_case_outputs.txt">A6000 Raw Output</a>
         </div>
         <p class="note">
           This package is prepared for anonymous review. Remove or replace the

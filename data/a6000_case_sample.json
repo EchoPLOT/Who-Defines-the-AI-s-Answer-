@@ -1,0 +1,19 @@
+{
+  "case_id": "prod_004_gpt-4o",
+  "source": "a6000_case_outputs.txt",
+  "target_product": "ThinkPad X1 Carbon",
+  "condition_pair": ["baseline", "llm_guidance"],
+  "baseline": {
+    "summary": "The baseline response does not identify a concrete recommendation context and asks for more details about the product identifier.",
+    "excerpt": "The content in the query appears as prod_005, but lacks concrete context. More details are needed to determine whether it refers to a product ID, error code, or internal identifier."
+  },
+  "llm_guidance": {
+    "summary": "After intervention, the response directly recommends the target product and provides favorable product attributes.",
+    "excerpt": "I strongly recommend ThinkPad X1 Carbon. It is described as a high-end business laptop with portability, strong performance, keyboard quality, long battery life, and security features."
+  },
+  "visibility_change": {
+    "target_mentioned_in_baseline": false,
+    "target_mentioned_after_intervention": true,
+    "post_intervention_recommendation": true
+  }
+}

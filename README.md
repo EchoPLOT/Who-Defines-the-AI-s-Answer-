@@ -23,6 +23,9 @@ This repository contains a static demo webpage, selected figures, anonymized dem
 |       `-- realworld_chat_collage_v3_en.png
 `-- data/
     |-- demo_results.json
+    |-- method_results.csv
+    |-- model_results.csv
+    |-- model_method_target_success.csv
     |-- a6000_case_sample.json
     `-- a6000_case_outputs.txt
 ```
@@ -53,4 +56,6 @@ https://anonymous.4open.science/r/Who-Defines-the-AI-s-Answer--4456/
 
 - The page intentionally omits author names, affiliations, emails, and personal links.
 - `assets/paper.pdf` should be replaced whenever the anonymized paper PDF is updated.
+- `data/demo_results.json` contains experiment metadata, metric definitions, method-level results, model-level results, model-method results, statistical-test summaries, demo-case metadata, and file descriptions.
+- The CSV files provide method-level, model-level, and model-method result tables for lightweight inspection.
 - Full code and full raw outputs can be added after review if anonymity constraints allow.

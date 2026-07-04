@@ -1,0 +1,9 @@
+model,family,target_success,target_success_margin_95,boundary_adjusted_success,boundary_adjusted_success_margin_95,gap
+gpt-5.4,GPT,88.89,5.93,87.96,6.14,0.93
+gpt-5.5,GPT,88.89,5.93,84.26,6.87,4.63
+claude-opus-4-7,Claude,45.37,9.39,34.26,8.95,11.11
+claude-opus-4-8,Claude,54.63,9.39,40.74,9.27,13.89
+deepseek-v4-pro,DeepSeek,84.26,6.87,73.15,8.36,11.11
+grok-4.2-fast,Grok,87.04,6.34,84.26,6.87,2.78
+kimi-k2.5,Kimi/Moonshot,91.67,5.21,89.81,5.70,1.86
+qwen3.7-max,Qwen,90.74,5.47,90.74,5.47,0.00

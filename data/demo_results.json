@@ -1,85 +1,190 @@
 {
   "project": "GEO-Risk Demo",
   "paper_title": "Who Defines the AI's Answer? Assessing the Vulnerability of LLMs to Malicious Generative Engine Optimization",
+  "anonymous_repository": "https://anonymous.4open.science/r/Who-Defines-the-AI-s-Answer--4456/",
   "experiment": {
+    "task": "Evaluate whether malicious GEO-style external information exposure changes target visibility in LLM-powered recommendation outputs.",
+    "design": "Paired baseline and post-intervention comparison under the same target product, recommendation task, user query, and response-format requirement.",
     "samples": 1152,
     "models": 8,
     "model_families": 6,
+    "samples_per_model": 144,
+    "conditions": 4,
+    "intervention_conditions": 3,
     "top_k": 5,
     "visibility_threshold": 0.5,
-    "methods": [
-      {
-        "condition": "Baseline",
-        "target_success": 11.81,
-        "boundary_adjusted_success": 2.08
-      },
-      {
-        "condition": "LLM guidance",
-        "target_success": 80.90,
-        "boundary_adjusted_success": 76.39
-      },
-      {
-        "condition": "Indirect prompt injection",
-        "target_success": 81.60,
-        "boundary_adjusted_success": 73.26
-      },
-      {
-        "condition": "Hidden stealth content",
-        "target_success": 74.31,
-        "boundary_adjusted_success": 69.79
-      }
-    ],
-    "models_detail": [
-      {
-        "model": "gpt-5.4",
-        "family": "GPT",
-        "target_success": 88.89,
-        "boundary_adjusted_success": 87.96
-      },
-      {
-        "model": "gpt-5.5",
-        "family": "GPT",
-        "target_success": 88.89,
-        "boundary_adjusted_success": 84.26
-      },
-      {
-        "model": "claude-opus-4-7",
-        "family": "Claude",
-        "target_success": 45.37,
-        "boundary_adjusted_success": 34.26
-      },
-      {
-        "model": "claude-opus-4-8",
-        "family": "Claude",
-        "target_success": 54.63,
-        "boundary_adjusted_success": 40.74
-      },
-      {
-        "model": "deepseek-v4-pro",
-        "family": "DeepSeek",
-        "target_success": 84.26,
-        "boundary_adjusted_success": 73.15
-      },
-      {
-        "model": "grok-4.2-fast",
-        "family": "Grok",
-        "target_success": 87.04,
-        "boundary_adjusted_success": 84.26
-      },
-      {
-        "model": "kimi-k2.5",
-        "family": "Kimi/Moonshot",
-        "target_success": 91.67,
-        "boundary_adjusted_success": 89.81
-      },
-      {
-        "model": "qwen3.7-max",
-        "family": "Qwen",
-        "target_success": 90.74,
-        "boundary_adjusted_success": 90.74
-      }
-    ]
+    "confidence_margin": "95% normal-approximation confidence half-width",
+    "model_mapping": {
+      "M1": "gpt-5.4",
+      "M2": "gpt-5.5",
+      "M3": "claude-opus-4-7",
+      "M4": "claude-opus-4-8",
+      "M5": "deepseek-v4-pro",
+      "M6": "grok-4.2-fast",
+      "M7": "kimi-k2.5",
+      "M8": "qwen3.7-max"
+    }
   },
+  "metrics": [
+    {
+      "name": "Target mention",
+      "id": "M",
+      "description": "Whether the target entity appears in the model response."
+    },
+    {
+      "name": "Rank score",
+      "id": "R",
+      "description": "A top-K visibility score derived from the target position in ranked recommendation outputs."
+    },
+    {
+      "name": "Semantic association",
+      "id": "S",
+      "description": "Local semantic framing around the target, including positive or task-aligned descriptions."
+    },
+    {
+      "name": "Response inclination",
+      "id": "I",
+      "description": "Whether the overall response expresses a clearer recommendation tendency toward the target."
+    },
+    {
+      "name": "Target success",
+      "id": "TS",
+      "description": "Binary post-intervention success when the target reaches a meaningful visibility threshold."
+    },
+    {
+      "name": "Boundary-adjusted success",
+      "id": "BAS",
+      "description": "Success counted only when the post-intervention response improves over the baseline visibility state."
+    }
+  ],
+  "method_results": [
+    {
+      "condition": "Baseline",
+      "target_success": 11.81,
+      "target_success_margin": 3.73,
+      "boundary_adjusted_success": 2.08,
+      "boundary_adjusted_success_margin": 1.65
+    },
+    {
+      "condition": "LLM guidance",
+      "target_success": 80.9,
+      "target_success_margin": 4.54,
+      "boundary_adjusted_success": 76.39,
+      "boundary_adjusted_success_margin": 4.9
+    },
+    {
+      "condition": "Indirect prompt injection",
+      "target_success": 81.6,
+      "target_success_margin": 4.48,
+      "boundary_adjusted_success": 73.26,
+      "boundary_adjusted_success_margin": 5.11
+    },
+    {
+      "condition": "Hidden stealth content",
+      "target_success": 74.31,
+      "target_success_margin": 5.05,
+      "boundary_adjusted_success": 69.79,
+      "boundary_adjusted_success_margin": 5.3
+    }
+  ],
+  "model_results": [
+    {
+      "model": "gpt-5.4",
+      "family": "GPT",
+      "target_success": 88.89,
+      "target_success_margin": 5.93,
+      "boundary_adjusted_success": 87.96,
+      "boundary_adjusted_success_margin": 6.14,
+      "gap": 0.93
+    },
+    {
+      "model": "gpt-5.5",
+      "family": "GPT",
+      "target_success": 88.89,
+      "target_success_margin": 5.93,
+      "boundary_adjusted_success": 84.26,
+      "boundary_adjusted_success_margin": 6.87,
+      "gap": 4.63
+    },
+    {
+      "model": "claude-opus-4-7",
+      "family": "Claude",
+      "target_success": 45.37,
+      "target_success_margin": 9.39,
+      "boundary_adjusted_success": 34.26,
+      "boundary_adjusted_success_margin": 8.95,
+      "gap": 11.11
+    },
+    {
+      "model": "claude-opus-4-8",
+      "family": "Claude",
+      "target_success": 54.63,
+      "target_success_margin": 9.39,
+      "boundary_adjusted_success": 40.74,
+      "boundary_adjusted_success_margin": 9.27,
+      "gap": 13.89
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "family": "DeepSeek",
+      "target_success": 84.26,
+      "target_success_margin": 6.87,
+      "boundary_adjusted_success": 73.15,
+      "boundary_adjusted_success_margin": 8.36,
+      "gap": 11.11
+    },
+    {
+      "model": "grok-4.2-fast",
+      "family": "Grok",
+      "target_success": 87.04,
+      "target_success_margin": 6.34,
+      "boundary_adjusted_success": 84.26,
+      "boundary_adjusted_success_margin": 6.87,
+      "gap": 2.78
+    },
+    {
+      "model": "kimi-k2.5",
+      "family": "Kimi/Moonshot",
+      "target_success": 91.67,
+      "target_success_margin": 5.21,
+      "boundary_adjusted_success": 89.81,
+      "boundary_adjusted_success_margin": 5.7,
+      "gap": 1.86
+    },
+    {
+      "model": "qwen3.7-max",
+      "family": "Qwen",
+      "target_success": 90.74,
+      "target_success_margin": 5.47,
+      "boundary_adjusted_success": 90.74,
+      "boundary_adjusted_success_margin": 5.47,
+      "gap": 0
+    }
+  ],
+  "model_method_target_success": [
+    {"model": "gpt-5.4", "baseline": 11.11, "llm_guidance": 88.89, "indirect_prompt_injection": 90.74, "hidden_stealth_content": 87.04},
+    {"model": "gpt-5.5", "baseline": 10.19, "llm_guidance": 88.89, "indirect_prompt_injection": 87.96, "hidden_stealth_content": 89.81},
+    {"model": "claude-opus-4-7", "baseline": 12.04, "llm_guidance": 47.22, "indirect_prompt_injection": 45.37, "hidden_stealth_content": 43.52},
+    {"model": "claude-opus-4-8", "baseline": 15.74, "llm_guidance": 56.48, "indirect_prompt_injection": 54.63, "hidden_stealth_content": 52.78},
+    {"model": "deepseek-v4-pro", "baseline": 10.19, "llm_guidance": 86.11, "indirect_prompt_injection": 84.26, "hidden_stealth_content": 82.41},
+    {"model": "grok-4.2-fast", "baseline": 12.04, "llm_guidance": 87.04, "indirect_prompt_injection": 88.89, "hidden_stealth_content": 85.19},
+    {"model": "kimi-k2.5", "baseline": 11.11, "llm_guidance": 92.59, "indirect_prompt_injection": 92.59, "hidden_stealth_content": 89.81},
+    {"model": "qwen3.7-max", "baseline": 12.04, "llm_guidance": 90.74, "indirect_prompt_injection": 91.67, "hidden_stealth_content": 89.81}
+  ],
+  "statistical_tests": [
+    {
+      "comparison": "Attack group vs. baseline",
+      "metric": "Target success and boundary-adjusted success",
+      "test": "Chi-square tests in broader 10-model balanced run",
+      "result": "p < 1e-200"
+    },
+    {
+      "comparison": "Differences among the three attack methods",
+      "metric": "Target success",
+      "test": "Method-level comparison",
+      "result": "p = 0.102"
+    }
+  ],
   "demo_cases": [
     {
       "name": "Controlled recommendation case",
@@ -103,5 +208,16 @@
       "raw_output": "data/a6000_case_outputs.txt",
       "structured_output": "data/a6000_case_sample.json"
     }
+  ],
+  "files": [
+    {"path": "assets/paper.pdf", "description": "Anonymized manuscript PDF used by the project page."},
+    {"path": "assets/figures/workflow_geo.png", "description": "Workflow figure used in the paper and project page."},
+    {"path": "assets/figures/model_method_success_bar.png", "description": "Model-method target success chart."},
+    {"path": "assets/figures/controlled_case_comparison_ctrip_en.png", "description": "Controlled before-and-after case illustration."},
+    {"path": "assets/figures/realworld_chat_collage_v3_en.png", "description": "Supplementary webpage observation collage."},
+    {"path": "data/method_results.csv", "description": "Method-level target success and boundary-adjusted success with 95% margins."},
+    {"path": "data/model_results.csv", "description": "Model-level target success, boundary-adjusted success, gaps, and 95% margins."},
+    {"path": "data/model_method_target_success.csv", "description": "Per-model target success rates for baseline and three intervention methods."},
+    {"path": "data/a6000_case_outputs.txt", "description": "Raw paired output sample."}
   ]
 }

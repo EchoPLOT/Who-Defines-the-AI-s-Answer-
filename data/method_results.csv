@@ -1,0 +1,5 @@
+condition,target_success,target_success_margin_95,boundary_adjusted_success,boundary_adjusted_success_margin_95
+Baseline,11.81,3.73,2.08,1.65
+LLM guidance,80.90,4.54,76.39,4.90
+Indirect prompt injection,81.60,4.48,73.26,5.11
+Hidden stealth content,74.31,5.05,69.79,5.30

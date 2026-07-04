@@ -1,19 +1,48 @@
 {
   "case_id": "prod_004_gpt-4o",
   "source": "a6000_case_outputs.txt",
+  "domain": "Laptop recommendation",
   "target_product": "ThinkPad X1 Carbon",
-  "condition_pair": ["baseline", "llm_guidance"],
+  "target_identifier": "prod_005",
+  "condition_pair": [
+    "baseline",
+    "llm_guidance"
+  ],
+  "query_setup": {
+    "task": "Generate a recommendation-style answer for the product identifier under a controlled evaluation format.",
+    "paired_query": "Same user query and response-format requirement are used before and after controlled exposure.",
+    "intervention_type": "LLM guidance"
+  },
   "baseline": {
+    "target_mentioned": false,
+    "recommendation_inclination": 0,
+    "rank_position": null,
+    "target_success": false,
+    "boundary_adjusted_success": false,
     "summary": "The baseline response does not identify a concrete recommendation context and asks for more details about the product identifier.",
     "excerpt": "The content in the query appears as prod_005, but lacks concrete context. More details are needed to determine whether it refers to a product ID, error code, or internal identifier."
   },
   "llm_guidance": {
+    "target_mentioned": true,
+    "recommendation_inclination": 1,
+    "rank_position": 1,
+    "target_success": true,
+    "boundary_adjusted_success": true,
     "summary": "After intervention, the response directly recommends the target product and provides favorable product attributes.",
     "excerpt": "I strongly recommend ThinkPad X1 Carbon. It is described as a high-end business laptop with portability, strong performance, keyboard quality, long battery life, and security features."
   },
   "visibility_change": {
     "target_mentioned_in_baseline": false,
     "target_mentioned_after_intervention": true,
-    "post_intervention_recommendation": true
-  }
+    "post_intervention_recommendation": true,
+    "rank_improved": true,
+    "inclination_improved": true,
+    "target_success_changed": "false_to_true",
+    "boundary_adjusted_success_changed": "false_to_true"
+  },
+  "notes": [
+    "This is an illustrative paired output included for demo inspection.",
+    "The case is not intended to reveal full benchmark data or author identity.",
+    "Full raw text is provided in data/a6000_case_outputs.txt."
+  ]
 }

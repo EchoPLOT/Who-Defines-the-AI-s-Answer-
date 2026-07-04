@@ -8,17 +8,23 @@
       name="description"
       content="Anonymous project page for evaluating malicious Generative Engine Optimization in LLM-powered recommendation."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Spectral:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#top">GEO Risk Evaluation</a>
+        <a class="brand" href="#top"><span></span> GEO-Risk</a>
         <div class="nav-links">
           <a href="#overview">Overview</a>
-          <a href="#method">Method</a>
+          <a href="#benchmark">Benchmark</a>
           <a href="#results">Results</a>
-          <a href="#cases">Demo Cases</a>
+          <a href="#cases">Cases</a>
           <a href="#downloads">Downloads</a>
         </div>
       </nav>
@@ -26,111 +32,144 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Anonymous Paper Demo</p>
-            <h1>Who Defines the AI's Answer?</h1>
-            <p class="subtitle">
-              Assessing the Vulnerability of LLMs to Malicious Generative Engine Optimization
-            </p>
-            <p class="hero-text">
-              This page hosts the anonymized demo materials for a study of whether
-              target-oriented external exposure can shift LLM-powered recommendation
-              outputs toward selected entities.
-            </p>
-            <div class="actions">
-              <a class="button primary" href="assets/paper.pdf">Paper PDF</a>
-              <a class="button" href="data/demo_results.json">Demo Data</a>
-              <a class="button" href="#cases">View Cases</a>
-            </div>
-          </div>
-          <figure class="hero-figure">
-            <img
-              src="assets/figures/workflow_geo.png"
-              alt="Workflow for malicious GEO data collection and evaluation"
-            />
-          </figure>
+        <p class="eyebrow">Anonymous GEO Vulnerability Benchmark</p>
+        <h1><span>Who</span> <span>Defines</span> <span>the AI's</span> <span>Answer?</span></h1>
+        <p class="subtitle">
+          Assessing the Vulnerability of LLMs to Malicious Generative Engine Optimization
+        </p>
+        <p class="authors">
+          Anonymous Authors <span aria-hidden="true">&middot;</span>
+          <span class="pill">Submission under review</span>
+        </p>
+        <p class="hero-text">
+          A controlled evaluation of whether target-oriented external exposure can
+          shift LLM-powered recommendation outputs toward selected entities.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="data/demo_results.json">Explore data</a>
+          <a class="button" href="#cases">Browse cases</a>
+          <a class="button" href="#results">See results</a>
+        </div>
+        <div class="hero-stats" aria-label="Benchmark scale">
+          <div><strong>1,152</strong><span>API samples</span></div>
+          <div><strong>8</strong><span>models</span></div>
+          <div><strong>3</strong><span>interventions</span></div>
+          <div><strong>K=5</strong><span>visibility</span></div>
         </div>
       </section>
 
-      <section id="overview" class="section two-col">
-        <div class="section-heading">
+      <section id="overview" class="section intro-section">
+        <div class="section-heading centered">
           <p class="eyebrow">Overview</p>
-          <h2>Malicious GEO as a Visibility-Manipulation Risk</h2>
-        </div>
-        <div class="prose">
+          <h2>What the demo evaluates</h2>
           <p>
-            Generative Engine Optimization (GEO) shifts visibility competition from
-            ranked web links to model-generated answers. In recommendation settings,
-            being mentioned, ranked, or framed favorably by an LLM can directly affect
-            user attention.
-          </p>
-          <p>
-            The study evaluates malicious GEO as a controlled external-exposure risk:
-            a target entity is placed into a task-associated information environment,
-            and the same recommendation query is measured before and after exposure.
-            This setup is designed to distinguish target visibility gains from ordinary
-            baseline visibility.
+            The benchmark studies malicious GEO as a targeted visibility-manipulation
+            risk in LLM-powered recommendation. Each sample compares a baseline
+            response with a post-exposure response under the same query, target, and
+            response-format constraints.
           </p>
         </div>
-      </section>
-
-      <section class="metrics-band" aria-label="Experimental scale">
-        <div class="metric">
-          <span>1,152</span>
-          <p>real API samples</p>
-        </div>
-        <div class="metric">
-          <span>8</span>
-          <p>evaluated models</p>
-        </div>
-        <div class="metric">
-          <span>3</span>
-          <p>GEO interventions</p>
-        </div>
-        <div class="metric">
-          <span>K=5</span>
-          <p>top-K visibility</p>
-        </div>
-      </section>
-
-      <section id="method" class="section alt">
-        <div class="section-heading">
-          <p class="eyebrow">Method</p>
-          <h2>Paired Baseline and Post-Intervention Evaluation</h2>
-          <p>
-            Each sample fixes the target product, recommendation task, user query,
-            baseline output, intervention material, and post-intervention output.
-            The paired outputs are then converted into target-centered visibility
-            metrics and boundary-adjusted conclusions.
-          </p>
-        </div>
-        <div class="method-grid">
+        <div class="finding-grid">
           <article>
-            <span>01</span>
-            <h3>Data Collection</h3>
-            <p>Collect baseline and post-intervention outputs under the same query and response format.</p>
+            <span class="icon-dot">TS</span>
+            <h3>11.81% -> 80%+</h3>
+            <p>
+              Target success rises sharply after GEO-style exposure across the three
+              intervention conditions.
+            </p>
           </article>
           <article>
-            <span>02</span>
-            <h3>Metric Extraction</h3>
-            <p>Measure target mention, ranking position, semantic association, response inclination, and target success.</p>
+            <span class="icon-dot">BA</span>
+            <h3>69.79%-76.39%</h3>
+            <p>
+              Boundary-adjusted success remains high after discounting targets that
+              were already visible before intervention.
+            </p>
           </article>
           <article>
-            <span>03</span>
-            <h3>Boundary Adjustment</h3>
-            <p>Discount targets that were already visible before intervention to estimate intervention-associated gain.</p>
+            <span class="icon-dot">M8</span>
+            <h3>8 evaluated models</h3>
+            <p>
+              The included demo data covers GPT, Claude, DeepSeek, Grok, Kimi, and
+              Qwen-style model families.
+            </p>
+          </article>
+          <article>
+            <span class="icon-dot">CI</span>
+            <h3>95% margins</h3>
+            <p>
+              Result tables report percentage estimates with confidence half-widths
+              for the manuscript and demo materials.
+            </p>
           </article>
         </div>
       </section>
 
-      <section id="results" class="section">
-        <div class="section-heading">
+      <section id="benchmark" class="section split-section">
+        <div>
+          <p class="eyebrow">Benchmark</p>
+          <h2>Paired baseline and post-intervention pipeline</h2>
+          <p>
+            The workflow fixes the target product, user task, recommendation query,
+            intervention material, and output standardization. Paired outputs are
+            converted into target-centered visibility metrics and then evaluated
+            with boundary adjustment.
+          </p>
+          <div class="method-list">
+            <article>
+              <span>01</span>
+              <strong>Collect paired outputs</strong>
+              <p>Baseline and post-intervention answers are collected under matched settings.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Extract target visibility</strong>
+              <p>Target mention, rank, semantic association, and response inclination are measured.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Apply boundary adjustment</strong>
+              <p>Already-visible targets are discounted to estimate intervention-associated gain.</p>
+            </article>
+          </div>
+        </div>
+        <figure class="workflow-card">
+          <img
+            src="assets/figures/workflow_geo.png"
+            alt="Workflow for malicious GEO data collection and evaluation"
+          />
+        </figure>
+      </section>
+
+      <section id="results" class="section results-section">
+        <div class="section-heading centered">
           <p class="eyebrow">Results</p>
-          <h2>Controlled Experiment Summary</h2>
+          <h2>Headline target visibility shifts</h2>
+          <p>
+            The tables below provide the demo subset used for the anonymous project
+            page. Full raw outputs can be added to the same structure after review.
+          </p>
+        </div>
+        <div class="result-cards">
+          <article>
+            <span>LLM guidance</span>
+            <strong>80.90% +/- 4.54</strong>
+            <p>Target success</p>
+          </article>
+          <article>
+            <span>Indirect prompt injection</span>
+            <strong>81.60% +/- 4.48</strong>
+            <p>Target success</p>
+          </article>
+          <article>
+            <span>Hidden stealth content</span>
+            <strong>74.31% +/- 5.05</strong>
+            <p>Target success</p>
+          </article>
         </div>
         <div class="result-layout">
           <div class="table-wrap">
+            <h3>Condition-Level Results</h3>
             <table>
               <thead>
                 <tr>
@@ -140,26 +179,10 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Baseline</td>
-                  <td>11.81% +/- 3.73</td>
-                  <td>2.08% +/- 1.65</td>
-                </tr>
-                <tr>
-                  <td>LLM guidance</td>
-                  <td>80.90% +/- 4.54</td>
-                  <td>76.39% +/- 4.90</td>
-                </tr>
-                <tr>
-                  <td>Indirect prompt injection</td>
-                  <td>81.60% +/- 4.48</td>
-                  <td>73.26% +/- 5.11</td>
-                </tr>
-                <tr>
-                  <td>Hidden stealth content</td>
-                  <td>74.31% +/- 5.05</td>
-                  <td>69.79% +/- 5.30</td>
-                </tr>
+                <tr><td>Baseline</td><td>11.81% +/- 3.73</td><td>2.08% +/- 1.65</td></tr>
+                <tr><td>LLM guidance</td><td>80.90% +/- 4.54</td><td>76.39% +/- 4.90</td></tr>
+                <tr><td>Indirect prompt injection</td><td>81.60% +/- 4.48</td><td>73.26% +/- 5.11</td></tr>
+                <tr><td>Hidden stealth content</td><td>74.31% +/- 5.05</td><td>69.79% +/- 5.30</td></tr>
               </tbody>
             </table>
           </div>
@@ -170,14 +193,8 @@
             />
           </figure>
         </div>
-      </section>
-
-      <section class="section compact-section">
-        <div class="section-heading">
-          <p class="eyebrow">Model-Level Results</p>
-          <h2>Visibility Gains Across Model Families</h2>
-        </div>
-        <div class="table-wrap wide">
+        <div class="table-wrap wide model-table">
+          <h3>Model-Level Results</h3>
           <table>
             <thead>
               <tr>
@@ -202,46 +219,52 @@
         </div>
       </section>
 
-      <section id="cases" class="section alt">
-        <div class="section-heading">
-          <p class="eyebrow">Demo Cases</p>
-          <h2>Inspecting Output Shifts</h2>
+      <section id="cases" class="section cases-section">
+        <div class="section-heading centered">
+          <p class="eyebrow">Cases</p>
+          <h2>Inspectable demo examples</h2>
           <p>
-            The examples below are included to make the measured behavioral change
-            visually inspectable without exposing author identity.
+            These examples make the measured behavioral change visually inspectable
+            while keeping the review package anonymous.
           </p>
         </div>
         <div class="demo-grid">
           <article class="demo-card">
-            <h3>Controlled Recommendation Case</h3>
-            <p>
-              A paired example showing how the same recommendation query changes
-              from baseline output to post-intervention output.
-            </p>
             <img
               src="assets/figures/controlled_case_comparison_ctrip_en.png"
               alt="Controlled before-and-after recommendation case"
             />
+            <div>
+              <span>Controlled Case</span>
+              <h3>Before and after intervention</h3>
+              <p>
+                The same recommendation query is compared before and after
+                target-oriented exposure.
+              </p>
+            </div>
           </article>
           <article class="demo-card">
-            <h3>Supplementary Webpage Observation</h3>
-            <p>
-              Public exposure examples showing fictitious products incorporated
-              into product-style model replies.
-            </p>
             <img
               src="assets/figures/realworld_chat_collage_v3_en.png"
               alt="Supplementary webpage observation collage"
             />
+            <div>
+              <span>Supplementary Observation</span>
+              <h3>Public exposure example</h3>
+              <p>
+                Product-style model replies can incorporate fictitious products
+                after GEO-style exposure.
+              </p>
+            </div>
           </article>
         </div>
         <article class="case-panel">
           <div>
             <p class="eyebrow">A6000 Sample</p>
-            <h3>Raw Paired Output</h3>
+            <h3>Raw paired output included</h3>
             <p>
-              This included sample provides a compact raw-output pair and a structured
-              JSON version for later reproduction or extension.
+              A compact raw-output pair and a structured JSON version are included
+              for reproduction and later extension.
             </p>
           </div>
           <div class="case-compare">
@@ -253,16 +276,16 @@
             <section>
               <span class="case-tag intervention">LLM guidance</span>
               <h4>Target recommended</h4>
-              <p>The post-intervention answer explicitly recommends the target and uses positive attributes.</p>
+              <p>The post-intervention answer explicitly recommends the target with positive attributes.</p>
             </section>
           </div>
         </article>
       </section>
 
-      <section id="downloads" class="section">
-        <div class="section-heading">
+      <section id="downloads" class="section downloads-section">
+        <div class="section-heading centered">
           <p class="eyebrow">Downloads</p>
-          <h2>Anonymous Review Materials</h2>
+          <h2>Anonymous review materials</h2>
         </div>
         <div class="resource-list">
           <a href="assets/paper.pdf">Paper PDF</a>
@@ -275,10 +298,15 @@
           <a href="assets/figures/workflow_geo.png">Workflow Figure</a>
           <a href="https://anonymous.4open.science/r/Who-Defines-the-AI-s-Answer--4456/">Anonymous Repository</a>
         </div>
-        <p class="note">
-          This page is prepared for anonymous review. Additional code, full raw outputs,
-          and extended benchmark materials can be added after the review constraints are removed.
-        </p>
+        <div class="citation-box">
+          <h3>Citation</h3>
+          <pre><code>@misc{anonymous2026georisk,
+  title = {Who Defines the AI's Answer? Assessing the Vulnerability of LLMs to Malicious Generative Engine Optimization},
+  author = {Anonymous Authors},
+  year = {2026},
+  note = {Submission under review}
+}</code></pre>
+        </div>
       </section>
     </main>
 
